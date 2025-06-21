@@ -1,5 +1,17 @@
 :root {
-  --main-content-bg-color: #06d6a0;
+  --body-bg-color: #06d6a0;
+
+  --main-content-border-color: #fffcf9;
+  --main-content-bg-color: #ffd166;
+  --main-content-font-color: #26547c;
+
+  --list-item-delete-btn-color: #ef476f;
+  --list-item-complete-btn-color: #06d6a0;
+
+  --list-add-btn-color: #06d6a0;
+  --list-delete-btn-color: #ef476f;
+
+  --main-content-btn-font-color: #26547c;
 }
 /* Using Josh Comeaus Custom CSS Rest - https://www.joshwcomeau.com/css/custom-css-reset/ */
 /* 1. Use a more-intuitive box-sizing model */
@@ -70,3 +82,128 @@ h6 {
   text-wrap: balance;
 }
 /* Custom CSS Reset Done */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--body-bg-color);
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+}
+
+button:hover {
+  opacity: 70%;
+}
+
+button:active {
+  opacity: 90%;
+}
+
+.main-content {
+  border: 2px solid var(--main-content-border-color);
+  background-color: var(--main-content-bg-color);
+  color: var(--main-content-font-color);
+  display: grid;
+  grid-template-areas:
+    "listTitle listInfo"
+    "listSidebar listInfo";
+  grid-template-columns: 240px 1100px;
+  grid-template-rows: 50px 500px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.main-content button {
+  border: 2px solid var(--main-content-border-color);
+  border-radius: 5px;
+  color: var(--main-content-btn-font-color);
+  font-weight: bold;
+}
+
+.main-content-list-title {
+  grid-area: listTitle;
+  text-align: center;
+  align-self: center;
+  border-bottom: 2px solid var(--main-content-border-color);
+}
+
+.main-content-sidebar {
+  grid-area: listSidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.main-content-sidebar-btns {
+  display: flex;
+  gap: 20px;
+}
+
+.main-content-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main-content-sidebar-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-content-list-info {
+  grid-area: listInfo;
+  border-left: 2px solid var(--main-content-border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  border-left: 5px solid blue;
+  width: 1000px;
+  padding: 10px;
+}
+
+.list-item-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.list-item-due-date {
+}
+
+.list-item-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#delete-list-item-btn {
+  background-color: var(--list-item-delete-btn-color);
+}
+
+#complete-list-item-btn {
+  background-color: var(--list-item-complete-btn-color);
+}
+
+#add-list-btn {
+  background-color: var(--list-add-btn-color);
+}
+
+#delete-list-btn {
+  background-color: var(--list-delete-btn-color);
+}
